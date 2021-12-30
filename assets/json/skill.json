@@ -1,0 +1,80 @@
+[
+	{
+		"category": "Front-end",
+		"icon": "html-5.svg",
+		"name": "HTML",
+		"rating": 3
+	},
+	{
+		"category": "Front-end",
+		"icon": "css-3.svg",
+		"name": "CSS",
+		"rating": 3
+	},
+	{
+		"category": "Front-end",
+		"icon": "javascript.svg",
+		"name": "Javascript",
+		"rating": 3
+	},
+	{
+		"category": "Front-end",
+		"icon": "vue.svg",
+		"name": "Vue.js",
+		"rating": 3
+	},
+	{
+		"category": "Front-end",
+		"icon": "nuxt.svg",
+		"name": "Nuxt.js",
+		"rating": 3
+	},
+	{
+		"category": "Back-end",
+		"icon": "firebase.svg",
+		"name": "Firebase Authentication",
+		"rating": 3
+	},
+	{
+		"category": "Back-end",
+		"icon": "firebase.svg",
+		"name": "Firebase Hosting",
+		"rating": 3
+	},
+	{
+		"category": "Back-end",
+		"icon": "firebase.svg",
+		"name": "Firebase Firestore",
+		"rating": 3
+	},
+	{
+		"category": "Back-end",
+		"icon": "firebase.svg",
+		"name": "Firebase Storage",
+		"rating": 3
+	},
+	{
+		"category": "Back-end",
+		"icon": "ruby.svg",
+		"name": "Ruby",
+		"rating": 2
+	},
+	{
+		"category": "Back-end",
+		"icon": "rails.svg",
+		"name": "Ruby on Rails",
+		"rating": 2
+	},
+	{
+		"category": "Tools",
+		"icon": "github.svg",
+		"name": "GitHub",
+		"rating": 3
+	},
+	{
+		"category": "Tools",
+		"icon": "visual-studio-code.svg",
+		"name": "Visual Studio Code",
+		"rating": 3
+	}
+]
