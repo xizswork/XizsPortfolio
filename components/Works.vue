@@ -2,22 +2,39 @@
   <div class="wrapper">
     <div class="container">
       <div class="heading">
-        <h1 @click="showWroks">Works</h1>
+        <h1>Works</h1>
       </div>
       <div class="content">
         <div class="content-head">今までご縁があったプロジェクトを紹介します</div>
         <div class="content-body">
+          <div 
+            v-if="works.length > 6"
+            class="toggle-button"
+            @click="toggleWroks"
+          >
+            <template v-if="workList.length > 6">
+              表示を隠す
+            </template>
+            <template v-else>
+              全て見る
+            </template>
+            <v-icon :class="{ 'hide-content':workList.length > 6 }">
+              mdi-chevron-down
+            </v-icon>
+          </div>
           <transition-group
             name="work-list"
             tag="div"
             class="works-container"
+            appear
           >
             <div
-              v-for="(work, index) in worklist"
+              v-for="(work, index) in workList"
               :key="work.id"
+              :class="'card-' + index"
               class="work-content"
             >
-              <WorkDetail :index="index" :work="work" />
+              <WorkDetail :work="work" />
             </div>
           </transition-group>
         </div>
@@ -36,6 +53,7 @@ export default {
   data() {
     return {
       showAll: false,
+      workList: [],
       works: [
         {
           id: 1,
@@ -95,42 +113,30 @@ export default {
           id: 5,
           thumbnail: 'HNCK0129.jpg',
           title: 'テスト5'
-        },
-        {
-          id: 6,
-          thumbnail: 'HNCK0129.jpg',
-          title: 'テスト6'
-        },
-        {
-          id: 7,
-          thumbnail: 'HNCK0129.jpg',
-          title: 'テスト7'
-        },
-        {
-          id: 8,
-          thumbnail: 'HNCK0129.jpg',
-          title: 'テスト8'
-        },
-        {
-          id: 9,
-          thumbnail: 'HNCK0129.jpg',
-          title: 'テスト9'
         }
       ]
     }
   },
-  computed: {
-    worklist() {
-      let works = this.works
-      if (!this.showAll){
-        works = works.slice(0, 6)
+  mounted() {
+    for (let i = 0; i < 6; i++) {
+      if (this.works[i]) {
+        this.workList.push(this.works[i])
       }
-      return works
     }
   },
   methods: {
-    showWroks() {
-      this.showAll = !this.showAll
+     toggleWroks() {
+      if (this.workList.length <= 6) {
+        for(let i = 6; i < this.works.length; i++) {
+          if (this.works[i]) {
+            this.workList.push(this.works[i])
+          }
+        }
+      } else {
+        for(let i = this.works.length; i > 6; i--) {
+          this.workList.pop()
+        }
+      }
     }
   },
 }
@@ -162,15 +168,67 @@ export default {
 .content-head {
   margin-bottom: 24px;
 }
+.toggle-button {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-bottom: 16px;
+  transition: 0.2;
+  cursor: pointer;
+}
+.hide-content {
+  transition: 0.2;
+  transform: rotateX(180deg);
+}
 .works-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: -10px;
 }
+.works-container:after{
+  content:"";
+  display:block;
+  width: 30%;
+  height:0;
+}
 .work-content {
   width: 30%;
   margin-bottom: 24px;
   transition: 1s;
+}
+@for $i from 0 through 12 {
+  $enter-delay: 0.2s;
+  .work-list-enter-active {
+    opacity: 0;
+    animation: fade-in 1.2s;
+      &.card-#{$i} {
+        animation-delay: #{0.2s * $i + $enter-delay};
+      }
+  }
+}
+.work-list-leave-active {
+  opacity: 1;
+  animation: fade-out 1.2s;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
 }
 </style>
