@@ -6,10 +6,7 @@
       </div>
       <div class="content">
         <div class="content-head">
-          <v-avatar size="100" class="image d-none d-sm-block">
-            <img src="@/assets/image/profile-icon.jpg" />
-          </v-avatar>
-          <v-avatar class="image d-sm-none">
+          <v-avatar :size="iconSize" class="image">
             <img src="@/assets/image/profile-icon.jpg" />
           </v-avatar>
           <h2 class="name">Nishi Yuta</h2>
@@ -35,7 +32,7 @@
             </p>
             <p>
               一緒に働きたくなる人間性、<br />
-              美しさを意識したソースコード、<br />
+              読みやすいソースコード、<br />
               チームで働く力を磨くために<br />
               日々精進しています。
             </p>
@@ -47,7 +44,29 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      iconSize: '48'
+    }
+  },
+  mounted() {
+    window.addEventListener('resize', this.iconResize)
+  },
+  destroyed() {
+    window.addEventListener('resize', this.iconResize)
+  },
+  methods: {
+    iconResize() {
+      const windowSize = window.innerWidth
+      if (windowSize > 960) {
+        this.iconSize = '104'
+      } else {
+        this.iconSize = '48'
+      }
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -91,9 +110,14 @@ export default {}
 }
 
 @media screen and (max-width: 960px) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+  }
   .content {
     flex-flow: column;
-    align-items: center;
   }
   .content-head {
     flex-flow: row;
@@ -109,6 +133,11 @@ export default {}
   }
   .content-body {
     margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content-text {
     text-align: center;
   }
 }

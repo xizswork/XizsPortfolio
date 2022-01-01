@@ -44,6 +44,7 @@
 </template>
 
 <script>
+import works from '@/assets/json/works.json'
 import WorkDetail from '~/components/WorkDetail.vue'
 
 export default {
@@ -52,69 +53,8 @@ export default {
   },
   data() {
     return {
-      showAll: false,
-      workList: [],
-      works: [
-        {
-          id: 1,
-          thumbnail: 'HNCK0129.jpg',
-          title: 'コンテンツの名前',
-          reading: 'コンテンツのふりがな',
-          heading: 'コンテンツの見出し',
-          explanation: `これは説明文\nこれは説明文\nこれは説明文`,
-          screenshots: [
-            {
-              url: 'HNCK0129.jpg',
-              head: 'スクショの見出し1',
-              body: `これはスクショの説明文\nこれはスクショの説明文\nこれはスクショの説明文`,
-            },
-            {
-              url: 'HNCK0129.jpg',
-              head: 'スクショの見出し2',
-              body: `これはスクショの説明文\nこれはスクショの説明文\nこれはスクショの説明文`,
-            },
-            {
-              url: 'HNCK0129.jpg',
-              head: 'スクショの見出し3',
-              body: `これはスクショの説明文\nこれはスクショの説明文\nこれはスクショの説明文`,
-            }
-          ],
-          tecs: [
-            {
-              icon: 'html-5.svg',
-              name: "HTML",
-            },
-            {
-              icon: 'css-3.svg',
-		          name: 'CSS'
-            },
-            {
-              icon: 'javascript.svg',
-		          name: 'Javascript'
-            }
-          ]
-        },
-        {
-          id: 2,
-          thumbnail: 'HNCK0129.jpg',
-          title: 'テスト2'
-        },
-        {
-          id: 3,
-          thumbnail: 'HNCK0129.jpg',
-          title: 'テスト3'
-        },
-        {
-          id: 4,
-          thumbnail: 'HNCK0129.jpg',
-          title: 'テスト4'
-        },
-        {
-          id: 5,
-          thumbnail: 'HNCK0129.jpg',
-          title: 'テスト5'
-        }
-      ]
+      works,
+      workList: []
     }
   },
   mounted() {

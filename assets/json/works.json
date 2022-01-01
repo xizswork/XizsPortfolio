@@ -1,0 +1,119 @@
+[
+	{
+		"id": 1,
+		"thumbnail": "HNCK0129.jpg",
+		"title": "コンテンツの名前",
+		"reading": "コンテンツのふりがな",
+		"heading": "コンテンツの見出し",
+		"explanation": "これは説明文\nこれは説明文\nこれは説明文",
+		"screenshots": [
+			{
+				"url": "HNCK0129.jpg",
+				"head": "スクショの見出し1",
+				"body": "これはスクショの説明文\nこれはスクショの説明文\nこれはスクショの説明文"
+			},
+			{
+				"url": "HNCK0129.jpg",
+				"head": "スクショの見出し2",
+				"body": "これはスクショの説明文\nこれはスクショの説明文\nこれはスクショの説明文"
+			},
+			{
+				"url": "HNCK0129.jpg",
+				"head": "スクショの見出し3",
+				"body": "これはスクショの説明文\nこれはスクショの説明文\nこれはスクショの説明文"
+			}
+		],
+		"tecs": [
+			{
+				"icon": "html-5.svg",
+				"name": "HTML"
+			},
+			{
+				"icon": "css-3.svg",
+				"name": "CSS"
+			},
+			{
+				"icon": "javascript.svg",
+				"name": "Javascript"
+			}
+		]
+	},
+	{
+		"id": 2,
+		"thumbnail": "HNCK0129.jpg",
+		"title": "コンテンツの名前",
+		"reading": "コンテンツのふりがな",
+		"heading": "コンテンツの見出し",
+		"explanation": "これは説明文\nこれは説明文\nこれは説明文",
+		"screenshots": [
+			{
+				"url": "HNCK0129.jpg",
+				"head": "スクショの見出し1",
+				"body": "これはスクショの説明文\nこれはスクショの説明文\nこれはスクショの説明文"
+			},
+			{
+				"url": "HNCK0129.jpg",
+				"head": "スクショの見出し2",
+				"body": "これはスクショの説明文\nこれはスクショの説明文\nこれはスクショの説明文"
+			},
+			{
+				"url": "HNCK0129.jpg",
+				"head": "スクショの見出し3",
+				"body": "これはスクショの説明文\nこれはスクショの説明文\nこれはスクショの説明文"
+			}
+		],
+		"tecs": [
+			{
+				"icon": "html-5.svg",
+				"name": "HTML"
+			},
+			{
+				"icon": "css-3.svg",
+				"name": "CSS"
+			},
+			{
+				"icon": "javascript.svg",
+				"name": "Javascript"
+			}
+		]
+	},
+  {
+		"id": 3,
+		"thumbnail": "HNCK0129.jpg",
+		"title": "コンテンツの名前",
+		"reading": "コンテンツのふりがな",
+		"heading": "コンテンツの見出し",
+		"explanation": "これは説明文\nこれは説明文\nこれは説明文",
+		"screenshots": [
+			{
+				"url": "HNCK0129.jpg",
+				"head": "スクショの見出し1",
+				"body": "これはスクショの説明文\nこれはスクショの説明文\nこれはスクショの説明文"
+			},
+			{
+				"url": "HNCK0129.jpg",
+				"head": "スクショの見出し2",
+				"body": "これはスクショの説明文\nこれはスクショの説明文\nこれはスクショの説明文"
+			},
+			{
+				"url": "HNCK0129.jpg",
+				"head": "スクショの見出し3",
+				"body": "これはスクショの説明文\nこれはスクショの説明文\nこれはスクショの説明文"
+			}
+		],
+		"tecs": [
+			{
+				"icon": "html-5.svg",
+				"name": "HTML"
+			},
+			{
+				"icon": "css-3.svg",
+				"name": "CSS"
+			},
+			{
+				"icon": "javascript.svg",
+				"name": "Javascript"
+			}
+		]
+	}
+]

@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import { getFirestore, collection, getDocs } from 'firebase/firestore'
 import Navigation from '~/components/Navigation.vue'
 import MenuButton from '~/components/MenuButton.vue'
 import Home from '~/components/Home.vue'
@@ -25,7 +24,6 @@ import Profile from '~/components/Profile.vue'
 import Skill from '~/components/Skill.vue'
 import Works from '~/components/Works.vue'
 import Contact from '~/components/Contact.vue'
-const db = getFirestore()
 
 export default {
   components: {
@@ -62,15 +60,8 @@ export default {
           icon: 'mdi-email',
           text: 'Contact'
         }
-      ],
-      test: ""
+      ]
     }
-  },
-  async created() {
-    const querySnapshot = await getDocs(collection(db, 'test'))
-    querySnapshot.forEach((doc) => {
-      console.log(doc.id, " => ", doc.data())
-    })
   },
   methods: {
     changeState(arg) {
