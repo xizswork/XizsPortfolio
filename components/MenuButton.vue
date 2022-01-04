@@ -1,41 +1,61 @@
 <template>
 	<v-dialog
 		v-model="dialog"
-		overlay-color="#000014"
-		overlay-opacity="0.9"
-		max-width="500px"
+		overlay-color="#f0f0f0"
+		overlay-opacity="0.98"
+		width="90%"
 		class="ma-5"
 	>
 		<template #activator="{ on, attrs }">
 			<v-fab-transition>
-				<div v-if="!dialog">
-					<v-btn
-						color="#1995ad"
-						x-large
-						fixed
-						bottom
-						right
-						fab
-						dark
-						v-bind="attrs"
-						v-on="on"
-					>
-						<div>
-							<div>menu</div>
-							<v-icon
-								dark
-							>
-								mdi-menu
-							</v-icon>
-						</div>
-					</v-btn>
-				</div>
+        <v-btn
+          v-if="!dialog"
+          x-large
+          fixed
+          bottom
+          right
+          fab
+          style="z-index: 300;"
+          v-bind="attrs"
+          v-on="on"
+        >
+          <div>
+            <div>menu</div>
+            <v-icon
+              dark
+            >
+              mdi-menu
+            </v-icon>
+          </div>
+        </v-btn>
+      </v-fab-transition>
+      <v-fab-transition>
+        <v-btn
+          v-if="dialog"
+          x-large
+          fixed
+          bottom
+          right
+          fab
+          style="z-index: 300;"
+          @click="dialog=false"
+        >
+          <div>
+            <div>close</div>
+            <v-icon
+              dark
+            >
+              mdi-close
+            </v-icon>
+          </div>
+        </v-btn>
 			</v-fab-transition>
 		</template>
 
 		<v-container class="menu-container">
 			<v-row class="mb-2" justify="center">
-				<p class="menu-title">ここにタイトルとロゴを入力</p>
+        <img src="@/assets/svg/Logo.svg" />
+				<p class="menu-title">menu</p>
 			</v-row>
 			<v-row class="mb-4" justify="center">
 				<p class="menu-text">移動先を選択して下さい</p>
@@ -96,14 +116,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.menu-container {
+  padding: 80px 24px;
+  height: 100vh;
+  max-width: 500px;
+}
 .menu-title {
-	font-size: clamp(24px, 5vw, 36px);
+  font-family: 'Josefin Sans', sans-serif;
+	font-size: 40px;
 	font-weight: bold;
-  color: #ffffff;
 }
 .menu-text {
 	text-align: center;
-	color: #ffffff;
 }
 .menu-close {
 	border-top: 1px solid #a1d6e2;

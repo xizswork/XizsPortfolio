@@ -3,12 +3,10 @@
     <div class="container">
       <div class="content">
         <div class="heading">
-          <h1>ポートフォリオサイト</h1>
-          <h1>改行後テキスト</h1>
+          <h1>Nishi Yuta</h1>
         </div>
         <div class="subHeading">
-          <p>サブテキスト</p>
-          <p>改行後</p>
+          <p>I'm Front-end engineer</p>
         </div>
       </div>
     </div>
@@ -36,7 +34,8 @@
   width: 90%;
 }
 .heading {
-  font-size: 2.5vw;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 40px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 1.5rem;
@@ -55,14 +54,14 @@
   overflow: hidden;
 }
 .background div{
-    position: absolute;
-    display: block;
-    list-style: none;
-    width: 20px;
-    height: 20px;
-    background: #dfdfdf80;
-    animation: floating 25s linear infinite;
-    bottom: -150px;    
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: #dfdfdf80;
+  animation: floating 25s linear infinite;
+  bottom: -150px;    
 }
 .background div:nth-child(1){
   left: 10%;
