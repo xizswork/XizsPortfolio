@@ -2,9 +2,13 @@
   <div class="wrapper">
     <div class="container">
       <div class="content">
-        <div class="heading">
-          <h1>About this site</h1>
-        </div>
+        <h1 class="heading">
+          <span>A</span>
+          <span>b</span>
+          <span>o</span>
+          <span>u</span>
+          <span>t</span>
+        </h1>
         <div class="content-text">
           <p class="d-none d-sm-block">
             このサイトはエンジニアNishi Yutaのポートフォリオサイトです。<br />
@@ -37,26 +41,54 @@
 </template>
 
 <script>
-export default {}
+export default {
+  mounted() {
+    window.addEventListener("scroll",this.showHeading)
+  },
+  destroyed() {
+    window.addEventListener("scroll", this.showHeading)
+  },
+  methods: {
+    showHeading() {
+      const targetList = document.querySelectorAll('.heading span')
+      const trigger = 300
+      targetList.forEach((target) => {
+        console.log(target)
+        if (window.innerHeight > target.getBoundingClientRect().top + trigger) {
+          target.classList.add('show')
+        }
+      })
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
 .wrapper {
-  width: 100vw;
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #ffffff;
 }
 .container {
   margin: 0 2rem;
   padding: 0 2rem;
 }
-.heading {
-  font-size: clamp(20px, 5vw, 36px);
+.heading  {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 100px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 2rem;
+}
+.heading span {
+  background-color: black;
+}
+.heading .show {
+  background-color: white;
 }
 .content-text {
   text-align: center;

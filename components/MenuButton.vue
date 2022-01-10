@@ -54,8 +54,11 @@
 
 		<v-container class="menu-container">
 			<v-row class="mb-2" justify="center">
-        <img src="@/assets/svg/Logo.svg" />
-				<p class="menu-title">menu</p>
+				<p class="menu-title">
+          <span>
+            menu
+          </span>
+        </p>
 			</v-row>
 			<v-row class="mb-4" justify="center">
 				<p class="menu-text">移動先を選択して下さい</p>
@@ -76,14 +79,11 @@
 			<v-row class="menu-close pa-2" justify="center">
 				<v-btn
 					text
-					dark
 					block
 					@click="dialog=false"
 				>
 					close
-					<v-icon
-						dark
-					>
+					<v-icon>
 						mdi-close
 					</v-icon>
 				</v-btn>
@@ -122,15 +122,34 @@ export default {
   max-width: 500px;
 }
 .menu-title {
+  display: flex;
+  justify-content: center;
+  position: relative;
   font-family: 'Josefin Sans', sans-serif;
 	font-size: 40px;
 	font-weight: bold;
+  width: 100%;
+}
+.menu-title::before {
+  content: "";
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  border-top: 1px solid #000000;
+}
+.menu-title span {
+  position: relative;
+  z-index: 2;
+  padding: 0 16px;
+  background-color: #f0f0f0;
 }
 .menu-text {
 	text-align: center;
 }
 .menu-close {
-	border-top: 1px solid #a1d6e2;
-	border-bottom: 1px solid #a1d6e2;
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
 }
 </style>

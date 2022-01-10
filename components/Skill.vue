@@ -130,15 +130,17 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
-  width: 100vw;
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #ffffff;
 }
 .container {
-  margin: 0 1rem;
-  padding: 0 1rem;
+  margin: 0 2rem;
+  padding: 0 2rem;
 }
 .heading {
   font-size: clamp(20px, 5vw, 36px);

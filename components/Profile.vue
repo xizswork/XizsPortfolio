@@ -71,11 +71,12 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
-  width: 100vw;
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
 }
 .container {
   margin: 0 2rem;
@@ -115,6 +116,7 @@ export default {
     align-items: center;
     justify-content: center;
     flex-flow: column;
+    position: relative;
   }
   .content {
     flex-flow: column;

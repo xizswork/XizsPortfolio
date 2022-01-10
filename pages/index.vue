@@ -1,12 +1,12 @@
 <template>
   <div class="base-wrapper">
-    <Navigation />
-    <About v-if="state === 'About'" />
-    <Profile v-else-if="state === 'Profile'" />
-    <Skill v-else-if="state === 'Skill'" />
-    <Works v-else-if="state === 'Works'" />
-    <Contact v-else-if="state === 'Contact'" />
-    <Home v-else />
+    <Background />
+    <Home v-if="state === 'Home' || state === 'All'" />
+    <About v-if="state === 'About' || state === 'All'" />
+    <Profile v-if="state === 'Profile' || state === 'All'" />
+    <Skill v-if="state === 'Skill' || state === 'All'" />
+    <Works v-if="state === 'Works' || state === 'All'" />
+    <Contact v-if="state === 'Contact' || state === 'All'" />
     <MenuButton
       ref="MenuButton"
       :links="links"
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import Navigation from '~/components/Navigation.vue'
+import Background from '~/components/Background.vue'
 import MenuButton from '~/components/MenuButton.vue'
 import Home from '~/components/Home.vue'
 import About from '~/components/About.vue'
@@ -27,7 +27,7 @@ import Contact from '~/components/Contact.vue'
 
 export default {
   components: {
-    Navigation,
+    Background,
     MenuButton,
     Home,
     About,
@@ -38,7 +38,7 @@ export default {
   },
   data() {
     return {
-      state: "Home",
+      state: "All",
       links: [
         {
           icon: 'mdi-help',

@@ -2,10 +2,8 @@
 	<div class="menu-link-button">
 		<v-btn
 			fab
-			dark
 			large
 			outlined
-			color="#a1d6e2"
 			@click="changeState(text)"
 		>
 			<v-icon dark>
@@ -34,6 +32,5 @@ export default {
 }
 .menu-link-text {
 	margin-top: 8px;
-	color: #a1d6e2;
 }
 </style>
