@@ -85,13 +85,39 @@ export default {
   margin-bottom: 2rem;
 }
 .heading span {
-  background-color: black;
+  display:inline-block;
+  opacity: 0;
+  transition: 2s;
 }
 .heading .show {
-  background-color: white;
+  opacity: 1;
+  animation-name: wave;
+  animation-duration: .4s;
+  animation-direction: alternate;
+  animation-iteration-count: 2;
+  &:nth-of-type(2){
+    animation-delay: .1s;
+  }
+  &:nth-of-type(3){
+    animation-delay: .2s;
+  }
+  &:nth-of-type(4){
+    animation-delay: .3s;
+  }
+  &:nth-of-type(5){
+    animation-delay: .4s;
+  }
 }
 .content-text {
   text-align: center;
   line-height: 2;
+}
+@keyframes wave {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -100px, 0);
+  }
 }
 </style>
