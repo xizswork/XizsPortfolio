@@ -1,9 +1,15 @@
 <template>
   <div class="wrapper">
     <div class="container">
-      <div class="heading">
-        <h1>Profile</h1>
-      </div>
+      <h1 class="profile-heading">
+        <span>P</span>
+        <span>r</span>
+        <span>o</span>
+        <span>f</span>
+        <span>i</span>
+        <span>l</span>
+        <span>e</span>
+      </h1>
       <div class="content">
         <div class="content-head">
           <v-avatar :size="iconSize" class="image">
@@ -52,9 +58,11 @@ export default {
   },
   mounted() {
     window.addEventListener('resize', this.iconResize)
+    window.addEventListener("scroll", this.showHeading)
   },
   destroyed() {
     window.addEventListener('resize', this.iconResize)
+    window.addEventListener("scroll", this.showHeading)
   },
   methods: {
     iconResize() {
@@ -64,6 +72,15 @@ export default {
       } else {
         this.iconSize = '48'
       }
+    },
+    showHeading() { 
+      const targetList = document.querySelectorAll('.profile-heading span')
+      const trigger = 300 
+      targetList.forEach((target) => { 
+      if (window.innerHeight > target.getBoundingClientRect().top + trigger) {
+          target.classList.add('show') 
+        } 
+      }) 
     }
   }
 }
@@ -82,11 +99,54 @@ export default {
   margin: 0 2rem;
   padding: 0 2rem;
 }
-.heading {
-  font-size: clamp(20px, 5vw, 36px);
+.profile-heading {
+  font-size: 100px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 1.5rem;
+}
+.profile-heading span {
+  display:inline-block;
+  opacity: 0;
+  transition: 2s;
+}
+.profile-heading .show {
+  opacity: 1;
+  animation-name: wave;
+  animation-duration: .4s;
+  animation-direction: alternate;
+  animation-iteration-count: 2;
+  &:nth-of-type(2){
+    animation-delay: .1s;
+  }
+  &:nth-of-type(3){
+    animation-delay: .2s;
+  }
+  &:nth-of-type(4){
+    animation-delay: .3s;
+  }
+  &:nth-of-type(5){
+    animation-delay: .4s;
+  }
+  &:nth-of-type(6){ 
+    animation-delay: .5s; 
+  }
+  &:nth-of-type(7){ 
+    animation-delay: .7s;
+  }
+
+}
+.content-text {
+  text-align: center;
+  line-height: 2;
+}
+@keyframes wave {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -100px, 0);
+  }
 }
 .content {
   display: flex;
