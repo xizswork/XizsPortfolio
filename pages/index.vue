@@ -7,6 +7,7 @@
     <Skill v-if="state === 'Skill' || state === 'All'" />
     <Works v-if="state === 'Works' || state === 'All'" />
     <Contact v-if="state === 'Contact' || state === 'All'" />
+    <Footer v-if="state === 'Contact' || state === 'All'" />
     <MenuButton
       ref="MenuButton"
       :links="links"
@@ -24,6 +25,7 @@ import Profile from '~/components/Profile.vue'
 import Skill from '~/components/Skill.vue'
 import Works from '~/components/Works.vue'
 import Contact from '~/components/Contact.vue'
+import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
@@ -34,7 +36,8 @@ export default {
     Profile,
     Skill,
     Works,
-    Contact
+    Contact,
+    Footer
   },
   data() {
     return {

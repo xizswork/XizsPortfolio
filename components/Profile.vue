@@ -134,7 +134,6 @@ export default {
   &:nth-of-type(7){ 
     animation-delay: .7s;
   }
-
 }
 .content-text {
   text-align: center;
