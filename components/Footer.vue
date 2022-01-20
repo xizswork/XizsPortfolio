@@ -25,7 +25,7 @@ export default {}
 	position: relative;
 	width: 100vw;
 	min-height: 40vh;
-	background-color: #f2f2f2;
+	background-color: #EEF3F5;
 	overflow: hidden;
 }
 .container {

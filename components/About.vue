@@ -1,9 +1,15 @@
 <template>
   <div class="wrapper">
+    <div class="about-background">
+      <div class="about-background-inner">
+        <div class="about-background-left" />
+        <div class="about-background-rigth" />
+      </div>
+    </div>
     <div class="container">
       <div class="content">
         <h1 class="about-heading">
-          <div class="about-heading-line" />
+          <!-- <div class="about-heading-line" /> -->
           <div class="about-blind" />
           <span class="about-blind-text">About</span>
         </h1>
@@ -35,7 +41,7 @@
         </div>
       </div>
     </div>
-    <div class="about-bottom-line" />
+    <!-- <div class="about-bottom-line" /> -->
   </div>
 </template>
 
@@ -204,5 +210,29 @@ export default {
   100% {
     width: 200%;
   }
+}
+.about-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.about-background-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.about-background-left {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 0, 0 95%, 40% 0);
+  background-color: #EEF3F5;
+}
+.about-background-rigth {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(70% 0, 100% 0, 100% 100%, 33% 100%);
+  background-color: #EEF3F5;
 }
 </style>
