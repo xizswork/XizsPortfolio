@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+    <div class="top-line" />
     <div class="container">
       <h1 class="works-heading">
         <span>W</span>
@@ -44,6 +45,7 @@
         </div>
       </div>
     </div>
+    <div class="bottom-line" />
   </div>
 </template>
 
@@ -107,21 +109,26 @@ export default {
   position: relative;
   width: 100vw;
   min-height: 100vh;
+  background-color: #404040;
+  color: #ffffff
 }
 .container {
   width: 80%;
   margin: 0 auto;
 }
 .works-heading {
-  font-size: 100px;
+  position: relative;
+  font-family: "ExodusDemo-Sharpen",serif;
+  font-size:0;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 .works-heading span {
   display:inline-block;
   opacity: 0;
   transition: 2s;
+  font-size: 100px;
 }
 .works-heading .show {
   opacity: 1;
@@ -146,14 +153,6 @@ export default {
   }
   &:nth-of-type(7){ 
     animation-delay: .7s;
-  }
-}
-@keyframes wave {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(0, -100px, 0);
   }
 }
 .content {
@@ -193,6 +192,29 @@ export default {
   margin-bottom: 24px;
   transition: 1s;
 }
+.work-list-leave-active {
+  opacity: 1;
+  animation: fade-out 1.2s;
+}
+.top-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 100;
+  height: 30px;
+  width: 2px;
+  border-left: 1px solid #ffffff;
+}
+.bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 100;
+  height: 30px;
+  width: 2px;
+  border-left: 1px solid #ffffff;
+}
+
 @for $i from 0 through 12 {
   $enter-delay: 0.2s;
   .work-list-enter-active {
@@ -203,9 +225,13 @@ export default {
       }
   }
 }
-.work-list-leave-active {
-  opacity: 1;
-  animation: fade-out 1.2s;
+@keyframes wave {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -100px, 0);
+  }
 }
 @keyframes fade-in {
   0% {
@@ -225,6 +251,18 @@ export default {
   100% {
     opacity: 0;
     transform: translateY(-15px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    margin: 40px auto ;
+  }
+  .content-head {
+    margin-bottom: 48px;
+  }
+  .work-content {
+    width: 100%;
   }
 }
 </style>

@@ -339,4 +339,10 @@
     border: none;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .dialog-thumbnail {
+    margin-bottom: 16px;
+  }
+}
 </style>

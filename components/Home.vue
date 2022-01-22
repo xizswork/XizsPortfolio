@@ -18,6 +18,7 @@
         <div class="background-bottom" />
       </div>
     </div>
+    <div class="bottom-line" />
   </div>
 </template>
 
@@ -41,18 +42,16 @@
   left: 10%;
 }
 .heading {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "ExodusDemo-Sharpen",serif;
   font-size: 40px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #ffffff;
 }
 .subHeading {
   font-size: 2.5vw;
   font-weight: lighter;
   text-align: center;
-  color: #ffffff;
 }
 .home-background {
   position: absolute;
@@ -76,7 +75,7 @@
   left: 0;
   z-index: 0;
   clip-path: polygon(0 0, 80% 0, 40% 100%, 0% 100%);
-  background-color: #0a0a64;
+  background-color: #cbd1d2;
 }
 .background-rigth {
   position: absolute;
@@ -86,14 +85,15 @@
   left: 0;
   z-index: -2;
   clip-path: polygon(100% 20%, 70% 100%, 100% 100%);
-  background-color: #000080;
+  background-color: #cbd1d2;
 }
-.background-bottom {
+.bottom-line {
   position: absolute;
-  width: 100%;
-  height: 10%;
   bottom: 0;
-  background-color: #fff;
-  z-index: -1;
+  left: 50%;
+  z-index: 100;
+  height: 30px;
+  width: 2px;
+  border-left: 1px solid #221f20;
 }
 </style>

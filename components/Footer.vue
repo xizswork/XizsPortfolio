@@ -25,7 +25,7 @@ export default {}
 	position: relative;
 	width: 100vw;
 	min-height: 40vh;
-	background-color: #EEF3F5;
+	background-color: #cbd1d2;
 	overflow: hidden;
 }
 .container {
@@ -43,6 +43,6 @@ export default {}
 .footer-body {
 	height: 10vh;
 	width: 100%;
-	background-color: #dfdfdf;
+	background-color: #404040;
 }
 </style>

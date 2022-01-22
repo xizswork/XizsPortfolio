@@ -1,15 +1,10 @@
 <template>
   <div class="wrapper">
-    <div class="about-background">
-      <div class="about-background-inner">
-        <div class="about-background-left" />
-        <div class="about-background-rigth" />
-      </div>
-    </div>
+    <div class="top-line" />
+    <!-- <div class="circle" :style="{ transform: 'translateY(' + translateCircle + 'px)' }" /> -->
     <div class="container">
       <div class="content">
         <h1 class="about-heading">
-          <!-- <div class="about-heading-line" /> -->
           <div class="about-blind" />
           <span class="about-blind-text">About</span>
         </h1>
@@ -41,32 +36,45 @@
         </div>
       </div>
     </div>
-    <!-- <div class="about-bottom-line" /> -->
+    <div class="bottom-line" />
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      translateCircle: 0,
+    }
+  },
   mounted() {
-    window.addEventListener("scroll",this.showHeading)
+    window.addEventListener("scroll",this.scrolls)
   },
   destroyed() {
-    window.addEventListener("scroll", this.showHeading)
+    window.addEventListener("scroll",this.scrolls)
   },
   methods: {
+    scrolls() {
+      this.showHeading()
+      // this.moveCircle()
+    },
     showHeading() {
       const targetBlind = document.querySelector('.about-blind')
       const targetText = document.querySelector('.about-blind-text')
-      const targetHeadingLine = document.querySelector('.about-heading-line')
-      const targetBottomLine = document.querySelector('.about-bottom-line')
       const trigger = 300
       if (window.innerHeight > targetText.getBoundingClientRect().top + trigger) {
         targetBlind.classList.add('about-blind-animation')
         targetText.classList.add('text-animation')
-        targetHeadingLine.classList.add('heading-line-animation')
-        targetBottomLine.classList.add('bottom-line-animation')
       }
     }
+    // moveCircle() {
+    //   const circle = document.querySelector('.circle')
+    //   const trigger = 300
+    //   const basePosition = circle.getBoundingClientRect().top
+    //   if (window.innerHeight > circle.getBoundingClientRect().top + trigger) {
+    //     this.translateCircle = this.translateCircle + -0.5
+    //   }
+    // }
   }
 }
 </script>
@@ -88,7 +96,7 @@ export default {
 }
 .about-heading  {
   position: relative;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "ExodusDemo-Sharpen",serif;
   font-size: 100px;
   font-weight: bold;
   text-align: center;
@@ -147,6 +155,24 @@ export default {
 .content-text {
   text-align: center;
   line-height: 2;
+}
+.top-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 100;
+  height: 30px;
+  width: 2px;
+  border-left: 1px solid #221f20;
+}
+.bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 100;
+  height: 30px;
+  width: 2px;
+  border-left: 1px solid #221f20;
 }
 @keyframes blindAnime{
   0% {
@@ -211,28 +237,11 @@ export default {
     width: 200%;
   }
 }
-.about-background {
+/* .circle {
   position: absolute;
-  width: 100%;
-  height: 100%;
-}
-.about-background-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.about-background-left {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  clip-path: polygon(0 0, 0 95%, 40% 0);
-  background-color: #EEF3F5;
-}
-.about-background-rigth {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  clip-path: polygon(70% 0, 100% 0, 100% 100%, 33% 100%);
-  background-color: #EEF3F5;
-}
+  width: 400px;
+  height: 400px;
+  background-color: #5f5f5f;
+  clip-path: circle(50% at 50% 50%);
+} */
 </style>

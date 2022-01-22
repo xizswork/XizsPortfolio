@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+    <div class="top-line" />
     <div class="container">
       <div class="content">
         <h1 class="contact-heading">
@@ -57,7 +58,7 @@ export default {}
 }
 .contact-heading  {
   position: relative;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "ExodusDemo-Sharpen",serif;
   font-size: 100px;
   font-weight: bold;
   text-align: center;
@@ -87,5 +88,14 @@ export default {}
 }
 .btn-container {
   width: 400px;
+}
+.top-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 100;
+  height: 30px;
+  width: 2px;
+  border-left: 1px solid #221f20;
 }
 </style>

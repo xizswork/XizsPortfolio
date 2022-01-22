@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
+    <div class="top-line" />
     <div class="container">
-      <h1 class="heading">
-        <div class="heading-line" />
+      <h1 class="work-heading">
         <div class="blind" />
         <span class="blind-text">My Skills</span>
       </h1>
@@ -138,14 +138,10 @@ export default {
     showHeading() {
       const targetBlind = document.querySelector('.blind')
       const targetText = document.querySelector('.blind-text')
-      const targetHeadingLine = document.querySelector('.heading-line')
-      const targetBottomLine = document.querySelector('.bottom-line')
       const trigger = 300
       if (window.innerHeight > targetText.getBoundingClientRect().top + trigger) {
         targetBlind.classList.add('blind-animation')
         targetText.classList.add('text-animation')
-        targetHeadingLine.classList.add('heading-line-animation')
-        targetBottomLine.classList.add('bottom-line-animation')
       }
     }
   }
@@ -167,9 +163,9 @@ export default {
   margin: 0 2rem;
   padding: 0 2rem;
 }
-.heading {
+.work-heading {
   position: relative;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "ExodusDemo-Sharpen",serif;
   font-size: 100px;
   font-weight: bold;
   text-align: center;
@@ -211,18 +207,6 @@ export default {
   animation-name: textAnime;
   animation-duration: 1s;
   animation-delay: 0.5s;
-  animation-fill-mode: forwards;
-}
-.heading-line-animation {
-  animation-name: headingLineAnime;
-  animation-duration: 1s;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
-}
-.bottom-line-animation {
-  animation-name: bottomLineAnime;
-  animation-duration: 1s;
-  animation-delay: 2s;
   animation-fill-mode: forwards;
 }
 .skill-table-head {
@@ -279,14 +263,23 @@ export default {
   align-items: center;
   padding-left: 8px;
 }
-
-@media screen and (max-width: 600px) {
-  .skill-name {
-    width: 60%;
-  }
-  .skill-rating {
-    width: 40%;
-  }
+.top-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 100;
+  height: 30px;
+  width: 2px;
+  border-left: 1px solid #221f20;
+}
+.bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 100;
+  height: 30px;
+  width: 2px;
+  border-left: 1px solid #221f20;
 }
 @keyframes blindAnime{
   0% {
@@ -317,38 +310,15 @@ export default {
     opacity: 1;
   }
 }
-@keyframes headingLineAnime{
-  0% {
-    top: 0;
-    width: 0%;
-    height: 100px;
-    transform: rotate(0);
+@media screen and (max-width: 600px) {
+  .skill-name {
+    width: 60%;
   }
-  50% {
-    top: 0;
-    width: 200%;
-    height: 100px;
-    transform: rotate(0);
+  .skill-rating {
+    width: 40%;
   }
-  75% {
-    top: 0;
-    width: 200%;
-    height: 100px;
-    transform: rotate(10deg);
-  }
-  100% {
-    top: -90vh;
-    width: 200%;
-    height: 100vh;
-    transform: rotate(10deg);
-  }
-}
-@keyframes bottomLineAnime{
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 200%;
+  .work-heading {
+    font-size: 80px;
   }
 }
 </style>

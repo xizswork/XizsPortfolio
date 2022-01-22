@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+    <div class="top-line" />
     <div class="container">
       <h1 class="profile-heading">
         <span>P</span>
@@ -46,6 +47,7 @@
         </div>
       </div>
     </div>
+    <div class="bottom-line" />
   </div>
 </template>
 
@@ -60,6 +62,7 @@ export default {
     window.addEventListener('resize', this.iconResize)
     window.addEventListener("scroll", this.showHeading)
   },
+  
   destroyed() {
     window.addEventListener('resize', this.iconResize)
     window.addEventListener("scroll", this.showHeading)
@@ -82,6 +85,13 @@ export default {
         } 
       }) 
     }
+  },
+  head() {
+    if (window.innerWidth > 960) {
+      this.iconSize = '104'
+    } else {
+      this.iconSize = '48'
+    }
   }
 }
 </script>
@@ -94,21 +104,26 @@ export default {
   position: relative;
   width: 100vw;
   min-height: 100vh;
+  background-color: #404040;
+  color: #ffffff
 }
 .container {
   margin: 0 2rem;
   padding: 0 2rem;
 }
 .profile-heading {
-  font-size: 100px;
+  position: relative;
+  font-family: "ExodusDemo-Sharpen",serif;
+  font-size:0;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 .profile-heading span {
   display:inline-block;
   opacity: 0;
   transition: 2s;
+  font-size: 100px;
 }
 .profile-heading .show {
   opacity: 1;
@@ -167,6 +182,24 @@ export default {
 }
 .content-body {
   line-height: 2;
+}
+.top-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 100;
+  height: 30px;
+  width: 2px;
+  border-left: 1px solid #ffffff;
+}
+.bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 100;
+  height: 30px;
+  width: 2px;
+  border-left: 1px solid #ffffff;
 }
 
 @media screen and (max-width: 960px) {

@@ -1,6 +1,5 @@
 <template>
   <div class="base-wrapper">
-    <Background />
     <Home v-if="state === 'Home' || state === 'All'" />
     <About v-if="state === 'About' || state === 'All'" />
     <Profile v-if="state === 'Profile' || state === 'All'" />
@@ -17,7 +16,6 @@
 </template>
 
 <script>
-import Background from '~/components/Background.vue'
 import MenuButton from '~/components/MenuButton.vue'
 import Home from '~/components/Home.vue'
 import About from '~/components/About.vue'
@@ -29,7 +27,6 @@ import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
-    Background,
     MenuButton,
     Home,
     About,
