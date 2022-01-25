@@ -2,25 +2,30 @@
   <div class="wrapper">
     <div class="home-background">
       <div class="background-inner">
-        <div class="background-main">
-          <div class="home-container">
-            <div class="content">
-              <div class="heading">
-                <h1>Nishi Yuta</h1>
-              </div>
-              <div class="subHeading">
-                <p>I'm Front-end engineer</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="background-main"/>
         <div class="background-rigth" />
         <div class="background-bottom" />
+        <div class="bottom-line" />
       </div>
     </div>
-    <div class="bottom-line" />
+    <div class="home-container">
+      <Heading id="home-heading" text="Nishi Yuta" />
+      <div class="sub-heading">
+        <p>I'm Front-end engineer</p>
+      </div>
+    </div>
   </div>
 </template>
+
+<script>
+import Heading from '~/components/Heading.vue'
+
+export default {
+  components: {
+    Heading
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .wrapper {
@@ -32,24 +37,13 @@
   min-height: 100vh;
 }
 .home-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.content {
   position: absolute;
   top: 30%;
   left: 10%;
 }
-.heading {
+.sub-heading {
   font-family: "ExodusDemo-Sharpen",serif;
-  font-size: 40px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-.subHeading {
-  font-size: 2.5vw;
+  font-size: 24px;
   font-weight: lighter;
   text-align: center;
 }
@@ -95,5 +89,21 @@
   height: 30px;
   width: 2px;
   border-left: 1px solid #221f20;
+}
+
+@media screen and (max-width: 600px) {
+  .home-container {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  .sub-heading {
+    font-family: "ExodusDemo-Sharpen",serif;
+    font-size: 16px;
+    font-weight: lighter;
+    text-align: center;
+  }
 }
 </style>

@@ -33,12 +33,12 @@ export default {}
 	padding: 0 2rem;
 }
 .footer-heading  {
-	position: relative;
-	font-family: 'Josefin Sans', sans-serif;
-	font-size: 100px;
-	font-weight: bold;
-	text-align: center;
-	margin-bottom: 2rem;
+  position: relative;
+  font-family: "ExodusDemo-Sharpen",serif;
+  font-size: 100px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 .footer-body {
 	height: 10vh;

@@ -7,6 +7,7 @@
         <h1 class="about-heading">
           <div class="about-blind" />
           <span class="about-blind-text">About</span>
+          <Heading id="home-heading" text="Nishi Yuta" />
         </h1>
         <div class="content-text">
           <p class="d-none d-sm-block">
@@ -41,7 +42,12 @@
 </template>
 
 <script>
+import Heading from '~/components/Heading.vue'
+
 export default {
+  components: {
+    Heading
+  },
   data() {
     return {
       translateCircle: 0,
@@ -244,4 +250,5 @@ export default {
   background-color: #5f5f5f;
   clip-path: circle(50% at 50% 50%);
 } */
+
 </style>

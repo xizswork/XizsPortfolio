@@ -1,12 +1,12 @@
 <template>
   <div class="base-wrapper">
-    <Home v-if="state === 'Home' || state === 'All'" />
-    <About v-if="state === 'About' || state === 'All'" />
-    <Profile v-if="state === 'Profile' || state === 'All'" />
-    <Skill v-if="state === 'Skill' || state === 'All'" />
-    <Works v-if="state === 'Works' || state === 'All'" />
-    <Contact v-if="state === 'Contact' || state === 'All'" />
-    <Footer v-if="state === 'Contact' || state === 'All'" />
+    <Home />
+    <About />
+    <Profile />
+    <Skill />
+    <Works />
+    <Contact />
+    <Footer />
     <MenuButton
       ref="MenuButton"
       :links="links"
