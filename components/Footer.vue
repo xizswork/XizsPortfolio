@@ -1,44 +1,34 @@
 <template>
 	<div>
-		<div class="wrapper">
-			<div class="container">
-				<div class="content">
-					<h1 class="footer-heading">
-						Thank you
-					</h1>
-				</div>
-			</div>
+		<div class="footer-head">
+			<Heading id="footer-heading" text="Thank you" />
 		</div>
 		<div class="footer-body"></div>
 	</div>
 </template>
 
 <script>
-export default {}
+import Heading from '~/components/Heading.vue'
+
+export default {
+  components: {
+    Heading
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
+.footer-head {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	position: relative;
-	width: 100vw;
-	min-height: 40vh;
-	background-color: #cbd1d2;
-	overflow: hidden;
-}
-.container {
-	margin: 0 2rem;
-	padding: 0 2rem;
-}
-.footer-heading  {
-  position: relative;
   font-family: "ExodusDemo-Sharpen",serif;
-  font-size: 100px;
-  font-weight: bold;
   text-align: center;
-  margin-bottom: 2rem;
+  width: 100vw;
+	min-height: 40vh;
+  background-color: #cbd1d2;
+	overflow: hidden;
 }
 .footer-body {
 	height: 10vh;

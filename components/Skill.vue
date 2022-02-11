@@ -2,10 +2,7 @@
   <div class="wrapper">
     <div class="top-line" />
     <div class="container">
-      <h1 class="work-heading">
-        <div class="blind" />
-        <span class="blind-text">My Skills</span>
-      </h1>
+      <Heading id="skill-heading" text="My Skills" />
       <div class="content">
         <div class="skill-table">
           <div class="select-box">
@@ -82,8 +79,12 @@
 
 <script>
 import skills from '@/assets/json/skill.json'
+import Heading from '~/components/Heading.vue'
 
 export default {
+  components: {
+    Heading
+  },
   data() {
     return {
       skills,

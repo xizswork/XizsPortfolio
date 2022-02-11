@@ -2,15 +2,7 @@
   <div class="wrapper">
     <div class="top-line" />
     <div class="container">
-      <h1 class="profile-heading">
-        <span>P</span>
-        <span>r</span>
-        <span>o</span>
-        <span>f</span>
-        <span>i</span>
-        <span>l</span>
-        <span>e</span>
-      </h1>
+      <Heading id="profile-heading" text="Profile" color="#ffffff" />
       <div class="content">
         <div class="content-head">
           <v-avatar :size="iconSize" class="image">
@@ -52,7 +44,12 @@
 </template>
 
 <script>
+import Heading from '~/components/Heading.vue'
+
 export default {
+  components: {
+    Heading
+  },
   data() {
     return {
       iconSize: '48'

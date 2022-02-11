@@ -1,5 +1,5 @@
 <template>
-	<div :id="id" class="heading">
+	<div :id="id" class="heading" :style="{ color: color }">
 		<h1>{{ text }}</h1>
 	</div>
 </template>
@@ -9,6 +9,7 @@ export default {
 	props: {
 		id : { type: String, required: true },
 		text: { type: String, required: true },
+		color: { type: String, required: false, default: '#000000' },
 		anime: { type: String, required: true, default: 'none' }
 	},
 
@@ -21,7 +22,7 @@ export default {
 		headingTexts.split('').forEach((headingText, index) => {
 			heading.innerHTML += `<span style="display: inline-block; font-size: 80px; animation-delay: ${ index/10 }s;">` + headingText +'</span>'
 		})
-	},
+	}
 }
 </script>
   

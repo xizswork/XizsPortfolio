@@ -4,12 +4,14 @@
       v-model="dialog"
     >
       <template #activator="{ on, attrs }">
-        <img
-          class="dialog-thumbnail"
-          :src="require(`~/assets/image/${work.thumbnail}`)"
-          v-bind="attrs"
-          v-on="on"
-        >
+        <div class="dialog-thumbnail-wrapper">
+          <img
+            class="dialog-thumbnail"
+            :src="require(`~/assets/image/${work.thumbnail}`)"
+            v-bind="attrs"
+            v-on="on"
+          >
+        </div>
         <div class="dialog-title">
           {{ work.title }}
         </div>
@@ -42,10 +44,12 @@
             </span>
           </h1>
           <div class="work-head">
-            <img
-              class="work-content-thumbnail"
-              :src="require(`~/assets/image/${work.thumbnail}`)"
-            >
+            <div class="work-content-thumbnail-wrapper">
+              <img
+                class="work-content-thumbnail"
+                :src="require(`~/assets/image/${work.thumbnail}`)"
+              >
+            </div>
             <div class="head-content">
               <section>
                 <h2 class="head-content-heading">
@@ -78,18 +82,22 @@
                     </p>
                   </div>
                   <div class="screenshot-body">
-                    <img
-                      class="screenshot"
-                      :src="require(`~/assets/image/${ss.url}`)"
-                    >
+                    <div class="screenshot-wrapper">
+                      <img
+                        class="screenshot"
+                        :src="require(`~/assets/image/${ss.url}`)"
+                      >
+                    </div>
                   </div>
                 </template>
                 <template v-else>
                   <div class="screenshot-body">
-                    <img
-                      class="screenshot"
-                      :src="require(`~/assets/image/${ss.url}`)"
-                    >
+                    <div class="screenshot-wrapper">
+                      <img
+                        class="screenshot"
+                        :src="require(`~/assets/image/${ss.url}`)"
+                      >
+                    </div>
                   </div>
                   <div class="screenshot-head">
                     <h2 class="screenshot-title">
@@ -149,16 +157,20 @@
 </script>
 
 <style lang="scss" scoped>
-.dialog-thumbnail {
+.dialog-thumbnail-wrapper {
   width: 100%;
-  margin-bottom: 8px;
-  background-size: cover;
   cursor: pointer;
   transition: 0.2s;
-}
-.dialog-thumbnail:hover {
-  transform: scale(1.1);
   box-shadow: 0 8px 16px 0 #0000003d;
+  margin-bottom: 16px;
+}
+.dialog-thumbnail-wrapper:hover {
+  transform: scale(1.05);
+}
+.dialog-thumbnail {
+  width: 100%;
+  object-fit: cover;
+  object-position:  center;
 }
 .dialog-title {
   display: flex;
@@ -199,13 +211,20 @@
   display: flex;
   align-items: stretch;
   justify-content: center;
+  width: 100%;
   margin-bottom: 80px;
 }
-.work-content-thumbnail {
+.work-content-thumbnail-wrapper {
   width: 50%;
-  background-size: cover;
+  overflow: hidden;
   margin-right: 56px;
-  border-radius: 8px;
+}
+.work-content-thumbnail {
+  width: 100%;
+  object-fit: cover;
+  object-position:  center;
+  margin: auto;
+  border-radius: 3px;
 }
 .head-content {
   width: 50%;
@@ -217,16 +236,19 @@
   padding-left: 1em;
   white-space: pre-wrap;
 }
-.content-body {
+.work-body {
+  width: 100%;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
 }
 .screenshots-container {
+  width: 100%;
   margin-bottom: 56px;
 }
 .screenshot-content {
+  width: 100%;
   display: flex;
   align-items: stretch;
   margin-bottom: 40px;
@@ -253,9 +275,18 @@
   padding: 24px;
   border: 1px solid #000000;
 }
+.screenshot-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
 .screenshot {
   width: 100%;
-  background-size: cover;
+  object-fit: cover;
+  object-position:  center;
+  border-radius: 3px;
+}
+.tecs-container {
+  width: 100%;
 }
 .tec-title {
   display: flex;
@@ -303,12 +334,11 @@
     margin-bottom: 40px;
   }
   .work-head {
+    flex-flow: column;
+    align-content: space-between;
     margin-bottom: 40px;
   }
-  .work-head {
-    flex-flow: column;
-  }
-  .work-content-thumbnail {
+  .work-content-thumbnail-wrapper {
     width: 100%;
     margin-bottom: 24px;
   }

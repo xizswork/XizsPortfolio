@@ -1,14 +1,8 @@
 <template>
   <div class="wrapper">
     <div class="top-line" />
-    <div class="container">
-      <h1 class="works-heading">
-        <span>W</span>
-        <span>o</span>
-        <span>r</span>
-        <span>k</span>
-        <span>s</span>
-      </h1>
+    <div class="works-container">
+      <Heading id="works-heading" text="Works" color="#ffffff" />
       <div class="content">
         <div class="content-head">今までご縁があったプロジェクトを紹介します</div>
         <div class="content-body">
@@ -27,12 +21,7 @@
               mdi-chevron-down
             </v-icon>
           </div>
-          <transition-group
-            name="work-list"
-            tag="div"
-            class="works-container"
-            appear
-          >
+          <div class="work-contents">
             <div
               v-for="(work, index) in workList"
               :key="work.id"
@@ -41,7 +30,7 @@
             >
               <WorkDetail :work="work" />
             </div>
-          </transition-group>
+          </div>
         </div>
       </div>
     </div>
@@ -50,12 +39,14 @@
 </template>
 
 <script>
-import works from '@/assets/json/works.json'
+import works from '~/assets/json/works.json'
 import WorkDetail from '~/components/WorkDetail.vue'
+import Heading from '~/components/Heading.vue'
 
 export default {
   components: {
-    WorkDetail
+    WorkDetail,
+    Heading
   },
   data() {
     return {
@@ -112,48 +103,9 @@ export default {
   background-color: #404040;
   color: #ffffff
 }
-.container {
+.works-container {
   width: 80%;
-  margin: 0 auto;
-}
-.works-heading {
-  position: relative;
-  font-family: "ExodusDemo-Sharpen",serif;
-  font-size:0;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.works-heading span {
-  display:inline-block;
-  opacity: 0;
-  transition: 2s;
-  font-size: 100px;
-}
-.works-heading .show {
-  opacity: 1;
-  animation-name: wave;
-  animation-duration: .4s;
-  animation-direction: alternate;
-  animation-iteration-count: 2;
-  &:nth-of-type(2){
-    animation-delay: .1s;
-  }
-  &:nth-of-type(3){
-    animation-delay: .2s;
-  }
-  &:nth-of-type(4){
-    animation-delay: .3s;
-  }
-  &:nth-of-type(5){
-    animation-delay: .4s;
-  }
-  &:nth-of-type(6){ 
-    animation-delay: .5s; 
-  }
-  &:nth-of-type(7){ 
-    animation-delay: .7s;
-  }
+  margin: 56px auto;
 }
 .content {
   display: flex;
@@ -162,6 +114,9 @@ export default {
 }
 .content-head {
   margin-bottom: 24px;
+}
+.content-body {
+  width: 100%;
 }
 .toggle-button {
   display: flex;
@@ -175,7 +130,7 @@ export default {
   transition: 0.2;
   transform: rotateX(180deg);
 }
-.works-container {
+.work-contents {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -191,10 +146,6 @@ export default {
   width: 30%;
   margin-bottom: 24px;
   transition: 1s;
-}
-.work-list-leave-active {
-  opacity: 1;
-  animation: fade-out 1.2s;
 }
 .top-line {
   position: absolute;
@@ -215,42 +166,10 @@ export default {
   border-left: 1px solid #ffffff;
 }
 
-@for $i from 0 through 12 {
-  $enter-delay: 0.2s;
-  .work-list-enter-active {
-    opacity: 0;
-    animation: fade-in 1.2s;
-      &.card-#{$i} {
-        animation-delay: #{0.2s * $i + $enter-delay};
-      }
-  }
-}
-@keyframes wave {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(0, -100px, 0);
-  }
-}
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-15px);
+@media screen and (max-width: 960px) {
+  .work-content {
+    width: 48%;
+    margin-bottom: 32px;
   }
 }
 
@@ -263,6 +182,7 @@ export default {
   }
   .work-content {
     width: 100%;
+    margin-bottom: 48px;
   }
 }
 </style>

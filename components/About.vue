@@ -1,14 +1,9 @@
 <template>
   <div class="wrapper">
     <div class="top-line" />
-    <!-- <div class="circle" :style="{ transform: 'translateY(' + translateCircle + 'px)' }" /> -->
     <div class="container">
       <div class="content">
-        <h1 class="about-heading">
-          <div class="about-blind" />
-          <span class="about-blind-text">About</span>
-          <Heading id="home-heading" text="Nishi Yuta" />
-        </h1>
+        <Heading id="about-heading" text="About" />
         <div class="content-text">
           <p class="d-none d-sm-block">
             このサイトはエンジニアNishi Yutaのポートフォリオサイトです。<br />
@@ -54,16 +49,12 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener("scroll",this.scrolls)
+    window.addEventListener("scroll",this.showHeading)
   },
   destroyed() {
-    window.addEventListener("scroll",this.scrolls)
+    window.addEventListener("scroll",this.showHeading)
   },
   methods: {
-    scrolls() {
-      this.showHeading()
-      // this.moveCircle()
-    },
     showHeading() {
       const targetBlind = document.querySelector('.about-blind')
       const targetText = document.querySelector('.about-blind-text')
@@ -73,14 +64,6 @@ export default {
         targetText.classList.add('text-animation')
       }
     }
-    // moveCircle() {
-    //   const circle = document.querySelector('.circle')
-    //   const trigger = 300
-    //   const basePosition = circle.getBoundingClientRect().top
-    //   if (window.innerHeight > circle.getBoundingClientRect().top + trigger) {
-    //     this.translateCircle = this.translateCircle + -0.5
-    //   }
-    // }
   }
 }
 </script>

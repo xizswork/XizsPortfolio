@@ -3,9 +3,7 @@
     <div class="top-line" />
     <div class="container">
       <div class="content">
-        <h1 class="contact-heading">
-          Contact
-        </h1>
+        <Heading id="contact-heading" text="Contact" />
         <div class="contact-body">
           <p>
             最後までご覧いただきありがとうございます。<br />
@@ -34,11 +32,18 @@
         </div>
       </div>
     </div>
+    <div class="bottom-line" />
   </div>
 </template>
 
 <script>
-export default {}
+import Heading from '~/components/Heading.vue'
+
+export default {
+  components: {
+    Heading
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -92,6 +97,15 @@ export default {}
 .top-line {
   position: absolute;
   top: 0;
+  left: 50%;
+  z-index: 100;
+  height: 30px;
+  width: 2px;
+  border-left: 1px solid #221f20;
+}
+.bottom-line {
+  position: absolute;
+  bottom: 0;
   left: 50%;
   z-index: 100;
   height: 30px;

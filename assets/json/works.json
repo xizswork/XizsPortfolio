@@ -1,24 +1,23 @@
 [
 	{
 		"id": 1,
-		"thumbnail": "HNCK0129.jpg",
-		"title": "コンテンツの名前",
-		"reading": "コンテンツのふりがな",
-		"heading": "コンテンツの見出し",
-		"explanation": "これは説明文\nこれは説明文\nこれは説明文",
+		"thumbnail": "wakuto_dailyreport/top.png",
+		"title": "wakuto-dailyreport",
+		"heading": "社内用日報作成アプリ",
+		"explanation": "社内用日報アプリの作成を行いました。\n\n当日の仕事内容の日報の投稿、ストレス値や業務内容などの集計ができます。\n\n初のweb制作となりましたが、先輩方のサポートもあり、一つのアプリケーションとして完成させることができました。",
 		"screenshots": [
 			{
-				"url": "HNCK0129.jpg",
+				"url": "wakuto_dailyreport/post.png",
 				"head": "スクショの見出し1",
 				"body": "これはスクショの説明文\nこれはスクショの説明文\nこれはスクショの説明文"
 			},
 			{
-				"url": "HNCK0129.jpg",
+				"url": "wakuto_dailyreport/my_page.png",
 				"head": "スクショの見出し2",
 				"body": "これはスクショの説明文\nこれはスクショの説明文\nこれはスクショの説明文"
 			},
 			{
-				"url": "HNCK0129.jpg",
+				"url": "wakuto_dailyreport/index.png",
 				"head": "スクショの見出し3",
 				"body": "これはスクショの説明文\nこれはスクショの説明文\nこれはスクショの説明文"
 			}
@@ -40,28 +39,12 @@
 	},
 	{
 		"id": 2,
-		"thumbnail": "HNCK0129.jpg",
+		"thumbnail": "noimage.png",
 		"title": "コンテンツの名前",
 		"reading": "コンテンツのふりがな",
 		"heading": "コンテンツの見出し",
 		"explanation": "これは説明文\nこれは説明文\nこれは説明文",
-		"screenshots": [
-			{
-				"url": "HNCK0129.jpg",
-				"head": "スクショの見出し1",
-				"body": "これはスクショの説明文\nこれはスクショの説明文\nこれはスクショの説明文"
-			},
-			{
-				"url": "HNCK0129.jpg",
-				"head": "スクショの見出し2",
-				"body": "これはスクショの説明文\nこれはスクショの説明文\nこれはスクショの説明文"
-			},
-			{
-				"url": "HNCK0129.jpg",
-				"head": "スクショの見出し3",
-				"body": "これはスクショの説明文\nこれはスクショの説明文\nこれはスクショの説明文"
-			}
-		],
+		"screenshots": [],
 		"tecs": [
 			{
 				"icon": "html-5.svg",
